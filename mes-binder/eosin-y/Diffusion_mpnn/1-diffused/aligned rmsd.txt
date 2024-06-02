@@ -1,0 +1,10 @@
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_5A__0.pdb 0.018270296975970268
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_5A__1.pdb 0.01739520952105522
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_5A__2.pdb 0.017684590071439743
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_5A__3.pdb 0.017232537269592285
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_5A__4.pdb 0.017158158123493195
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_8A__0.pdb 0.030176255851984024
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_8A__1.pdb 0.033554352819919586
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_8A__2.pdb 0.027494464069604874
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_8A__3.pdb 0.029772134497761726
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/eosin-y/Diffusion_mpnn/1-diffused/7auy_eos_8A__4.pdb 0.03576657548546791

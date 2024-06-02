@@ -1,0 +1,3 @@
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/Design 3 - active site/2a-ligand mpnn only designs/fold_mes_active_norepack_id10_model_0.cif 0.4184679388999939
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/Design 3 - active site/2a-ligand mpnn only designs/fold_mes_active_repack_id6_model_0.cif 0.4100700616836548
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/Design 3 - active site/2a-ligand mpnn only designs/fold_mes_active_temp_id3_model_0.cif 0.40867140889167786

@@ -1,0 +1,41 @@
+python run.py --seed 111 --pdb_path "./inputs/test2.pdb" --model_type "ligand_mpnn" --out_folder "./outputs/mes_test" --batch_size 3 -- number_of_batches 5
+
+python score.py --model_type "ligand_mpnn" --seed 111 --autoregressive_score 1 --pdb_path "./outputs/mes_test2/backbones/test2_1.pdb" --out_folder "./outputs/mes_score" --use_sequence 1 --batch_size 1 --number_of_batches 10
+
+A100/A103/B42
+
+python run_inference.py inference.deterministic=True diffuser.T=200 inference.output_prefix=output/ligand_protein_motif/mes_fixcap_ inference.input_pdb=input/design_1.pdb contigmap.contigs=[\'1-10,A2-43,5-50,A86-86,50-200,A172-225,5-50,A268-268,5-50\'] contigmap.length="150-350" inference.ligand=MES inference.num_designs=5 inference.design_startnum=0
+
+
+python run_inference.py inference.deterministic=True diffuser.T=200 inference.output_prefix=output/ligand_protein_motif/mes_activesite_ inference.input_pdb=input/design_1.pdb contigmap.contigs=[\'1-10,A2-12,2-5,A14-26,2-5,A28-30,A32-74,2-5,A78-79,2-5,A82-85,2-5,A87-142,2-5,A145-201,2-5,A203-266,1-10\'] contigmap.length="150-350" inference.ligand=MES inference.num_designs=5 inference.design_startnum=0
+
+
+
+
+python run.py --seed 111 --pdb_path "./inputs/mes__1.pdb" --model_type "protein_mpnn" --out_folder "./outputs/mes_protein" --fixed_residues "A137 A139" --batch_size 3 --number_of_batches 5
+
+lig_all = 90, 92
+
+
+Pymol print selected residuesw
+iterate "name of selection" and name CA, print (resi, resn)
+
+
+python run.py --model_type "ligand_mpnn" --pdb_path "./inputs/design_1.pdb" --out_folder "./outputs/mes_active" --redesigned_residues "A13 A27 A31 A75 A76 A77 A80 A81 A86 A143 A144 A202 A267 A268 A269 A270 A272 A273 " --batch_size 1 --number_of_batches 1 
+
+To combined structures using pymol:
+pymol create combo
+alter domA, chain='A'
+ alter domA, resv+=0
+ alter domB, chain='A'
+ alter domA, resv+=100
+ alter domC, chain='A'
+ alter domA, resv+=200
+ alter all, segi=''
+ sort
+ create combo, domA or domB or domC
+ save combo.pdb, combo
+
+OR
+
+Select the relevant structures in chimera, then type "combine" command

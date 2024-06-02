@@ -1,0 +1,5 @@
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/PAS-mes/Diffusion_mpnn/1-diffused/PAS_mes__0.pdb 0.03020342066884041
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/PAS-mes/Diffusion_mpnn/1-diffused/PAS_mes__1.pdb 0.029272880405187607
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/PAS-mes/Diffusion_mpnn/1-diffused/PAS_mes__2.pdb 0.02954595535993576
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/PAS-mes/Diffusion_mpnn/1-diffused/PAS_mes__3.pdb 0.026372898370027542
+/mnt/c/Users/wei_g/Desktop/Designs/mes-binder/PAS-mes/Diffusion_mpnn/1-diffused/PAS_mes__4.pdb 0.024721994996070862

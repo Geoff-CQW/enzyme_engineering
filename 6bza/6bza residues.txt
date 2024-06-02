@@ -1,0 +1,41 @@
+MPMM
+wild 0 - 1-388, 415-419, 499-501
+Wild 1 - 1-388,412-416,510-512
+wild 2 - 1-388, 406-410, 516-518
+
+gln 0 - 1-388, 412-416, 503-505
+gln 1 - 1-388, 412-416, 471-473
+gln 2 - 1-388, 411-415, 499-501
+
+diffuse 0 - 1-46, 55-91, 95-112, 123-407, 418-506
+diffuse 1 - 
+diffuse 2 - 1-46, 51-87, 93-110, 119-403, 420-508
+
+FAD binding
+7-16, 37-42
+1-389 -> conserved FAD binding fold
+
+Catalytic residues
+Lys 87
+
+Entrance residues (polar interaction)
+Glu 49, 115
+Lys 501
+Asn 405
+
+Substrate binding Polar
+Ser 404
+Ile 499
+
+Non-polar
+Pro 48
+Leu 111
+Leu 401
+
+Stacking
+Trp 400
+Leu 401
+Phe 90
+
+Residues near substrate to diffuse
+47-49, 87-90, 109-115, 401, 404-405, 408, 499-501

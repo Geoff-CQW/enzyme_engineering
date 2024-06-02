@@ -1,0 +1,9 @@
+Date: Wed 15 May 2024 04:34:15 
+Ligand: CC1=CC(=C(C(=C1)C)C2=C3C=CC=CC3=[N+](C4=CC=CC=C42)C)C.[O-]Cl(=O)(=O)=O
+Method: AC
+Target: fold_mes_active_repack_id6_model_0.cif
+Sampling exhaustivity: 90
+Cavity prioritization: 60
+Random Initial Conditions: 1
+Box size: 13 13 13
+Box center: 9.0 -4.0 -7.0

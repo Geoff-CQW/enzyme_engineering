@@ -1,0 +1,7 @@
+Date: Fri 17 May 2024 07:02:14 
+Ligand: CC1=CC(=C(C(=C1)C)C2=C3C=CC=CC3=[N+](C4=CC=CC=C42)C)C.[O-]Cl(=O)(=O)=O
+Method: Vina
+Target: fold_activesite2_id11_model_0.cif
+Sampling exhaustivity: 10
+Box size: 18 18 18
+Box center: -2.0 2.0 8.0
