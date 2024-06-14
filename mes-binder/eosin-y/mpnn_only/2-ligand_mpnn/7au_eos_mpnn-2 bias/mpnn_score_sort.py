@@ -1,39 +1,28 @@
 import argparse
-import glob, os
+import glob, os, sys
 
 # get arguments
 parser = argparse.ArgumentParser(description="Takes ligand mpnn fasta file(s) and sort according to category from user")
 parser.add_argument("-f", "--path", type=str, required=True, help="path to fasta files to be sorted, can be directory or single file. For directory, use wild card for filetype e.g: c:/path/*.fa")
 parser.add_argument("-s", "--sort_by", type=str, required=False, default="overall_confidence", help="Score to sort by. Default: overall_confidence")
 # parser.add_argument("-v", "--verbose", action="store_true", help="Print verbose output.")
-#
+
 args = parser.parse_args()
 
 # to get the arguments as variables, access it directly
 file_path = args.path
 sort_by = args.sort_by
 
+
+if sort_by not in ['overall_confidence', 'id', 'ligand_confidence', 'seq_rec']:
+    print(f"\nCannot sort by --{sort_by}--, no such score!\nSorting by overall_confidence\n")
+    sort_by = 'overall_confidence'
+
 # get files as list
 files = glob.glob(file_path)
 
-### functions for reading, sorting and writing###
-def read_and_sort_fasta(file_path, output_filename, sort_by='overall_confidence'):
+### functions for reading, sorting and writing ###
 
-    '''reads provided ligand/protein mpnn fasta file and returns a list of dictionaries sorted by desired score '''
-
-    results = []
-
-    with open(file_path, 'r') as f:
-        for line in f:
-            header = line
-            seq = next(f, None)
-            if 'model_path' in header.split(', ')[-1].split('='):
-                read_mpnn_fa(header, seq, output_filename)
-            else:
-                results.append(read_mpnn_fa(header, seq, output_filename))
-
-    return sorted(results, key = lambda d: d[sort_by], reverse=True)
- 
 def read_mpnn_fa(header, sequence, output_filename):
     ''' reads ligand/protein mpnn fasta file and returns dictionary of with scores as key : value pair and sequence '''
 
@@ -52,7 +41,7 @@ def read_mpnn_fa(header, sequence, output_filename):
 
     # check for template sequence that's always at the top of ligand mpnn fasta and write it to the file
     if 'model_path' in header_list[-1].split('='):
-        print('input seq')
+        # print('input seq')
         file = open(output_filename, 'w+')
         file.writelines([header, sequence])
         file.close()
@@ -68,6 +57,23 @@ def read_mpnn_fa(header, sequence, output_filename):
 
     return info_dict
 
+def read_and_sort_fasta(file_path, output_filename, sort_by='overall_confidence'):
+
+    '''reads provided ligand/protein mpnn fasta file and returns a list of dictionaries sorted by desired score '''
+
+    results = []
+
+    with open(file_path, 'r') as f:
+        for line in f:
+            header = line
+            seq = next(f, None)
+            if 'model_path' in header.split(', ')[-1].split('='):
+                read_mpnn_fa(header, seq, output_filename)
+            else:
+                results.append(read_mpnn_fa(header, seq, output_filename))
+
+    return sorted(results, key = lambda d: d[sort_by], reverse=True)
+ 
 def write_fasta(sorted_list, output_filename):
 
     ''' go through sorted list and write to file in fasta format '''
@@ -94,9 +100,16 @@ def write_fasta(sorted_list, output_filename):
     file1.close()
 
 
-### loop files and sort ###
+### loop files, sort and write ###
 
 for file in files:
+    
     output_filename = os.path.basename(file).rsplit(',', 1)[0] + '_sorted'
 
-    '''to do'''
+    # read fasta file
+    fasta = read_and_sort_fasta(file, output_filename, sort_by)
+
+    # write fasta
+    write_fasta(fasta, output_filename)
+
+
