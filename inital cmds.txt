@@ -39,3 +39,5 @@ alter domA, chain='A'
 OR
 
 Select the relevant structures in chimera, then type "combine" command
+
+
