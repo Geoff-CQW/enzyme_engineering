@@ -9,8 +9,24 @@ python run_inference.py inference.deterministic=True diffuser.T=200 inference.ou
 
 python run_inference.py inference.deterministic=True diffuser.T=200 inference.output_prefix=output/ligand_protein_motif/mes_activesite_ inference.input_pdb=input/design_1.pdb contigmap.contigs=[\'1-10,A2-12,2-5,A14-26,2-5,A28-30,A32-74,2-5,A78-79,2-5,A82-85,2-5,A87-142,2-5,A145-201,2-5,A203-266,1-10\'] contigmap.length="150-350" inference.ligand=MES inference.num_designs=5 inference.design_startnum=0
 
+------------FOR RFDIFFUSION NOT AA---------------
+
+#### make output topology file ####
+./helper_scripts/make_secstruc_adj.py --input_pdb ./input/7auy_chainA.pdb --out_dir /foldcond_adjstr/
 
 
+### fold conditioned diffusion ###
+./scripts/run_inference.py inference.output_prefix=./scaffold_conditioned_test/test scaffoldguided.scaffoldguided=True scaffoldguided.target_pdb=False scaffoldguided.scaffold_dir=./examples/ppi_scaffolds_subset
+
+
+### partial diffusion 7auy ###
+
+### partial diffuse residues 12A from ligand. fix rest using provide_seq ###
+./scripts/run_inference.py inference.output_prefix=test_output/7auy_partialdiffusion inference.input_pdb=input/7auy_chainA.pdb 'contigmap.contigs=[267-267]' 'contigmap.provide_seq=[4-35,71-92,102-107,140-149,168-173,197-204,232-240,264-276]' inference.num_designs=1 diffuser.partial_T=20
+
+### might try this one also
+inference.ckpt_override_path=models/Complex_beta_ckpt.pt
+-----------------------------------------------
 
 python run.py --seed 111 --pdb_path "./inputs/mes__1.pdb" --model_type "protein_mpnn" --out_folder "./outputs/mes_protein" --fixed_residues "A137 A139" --batch_size 3 --number_of_batches 5
 
