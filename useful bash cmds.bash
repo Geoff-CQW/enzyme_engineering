@@ -43,3 +43,26 @@ Final note: using || as separator won't work because awk interprets the double p
 awk 'BEGIN { i = 0 } /^>/ { split($0, id, ","); i++; print id[1] "_" i; next } { print }'
 
 needs gemini explanations.
+
+
+# for moving files in all subdirectories to one directory
+
+mv -t /destination/directory */*.jpg
+cp -t /destination/directory */*.jpg
+
+# add text to all files in folder
+for f in *.md; do mv "$f" "test - $f"; done
+
+# prepend files with directory name
+
+for name in */*; do
+    [ ! -f "$name" ] && continue
+
+    dir="$( basename "$( dirname "$name" )" )"
+    newname="$dir/${dir}${name##*/}"
+
+    if [ ! -e "$newname" ]; then
+        # echo mv "$name" "$newname"
+		mv "$name" "$newname"
+    fi
+done
