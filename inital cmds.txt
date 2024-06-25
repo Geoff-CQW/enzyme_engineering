@@ -6,9 +6,6 @@ A100/A103/B42
 
 python run_inference.py inference.deterministic=True diffuser.T=200 inference.output_prefix=output/ligand_protein_motif/mes_fixcap_ inference.input_pdb=input/design_1.pdb contigmap.contigs=[\'1-10,A2-43,5-50,A86-86,50-200,A172-225,5-50,A268-268,5-50\'] contigmap.length="150-350" inference.ligand=MES inference.num_designs=5 inference.design_startnum=0
 
-
-python run_inference.py inference.deterministic=True diffuser.T=200 inference.output_prefix=output/ligand_protein_motif/mes_activesite_ inference.input_pdb=input/design_1.pdb contigmap.contigs=[\'1-10,A2-12,2-5,A14-26,2-5,A28-30,A32-74,2-5,A78-79,2-5,A82-85,2-5,A87-142,2-5,A145-201,2-5,A203-266,1-10\'] contigmap.length="150-350" inference.ligand=MES inference.num_designs=5 inference.design_startnum=0
-
 ------------FOR RFDIFFUSION NOT AA---------------
 
 #### make output topology file ####
@@ -16,6 +13,7 @@ python run_inference.py inference.deterministic=True diffuser.T=200 inference.ou
 
 
 ### fold conditioned diffusion ###
+''' Not useful '''
 ./scripts/run_inference.py inference.output_prefix=./scaffold_conditioned_test/test scaffoldguided.scaffoldguided=True scaffoldguided.target_pdb=False scaffoldguided.scaffold_dir=./examples/ppi_scaffolds_subset
 
 
@@ -26,15 +24,15 @@ python run_inference.py inference.deterministic=True diffuser.T=200 inference.ou
 
 ### might try this one also
 inference.ckpt_override_path=models/Complex_beta_ckpt.pt
+
+***
+https://github.com/RosettaCommons/RFdiffusion/issues/138 <- see this on how to get diversity in an input's structures, the same input is found in RFAA code.
+***
 -----------------------------------------------
 
 python run.py --seed 111 --pdb_path "./inputs/mes__1.pdb" --model_type "protein_mpnn" --out_folder "./outputs/mes_protein" --fixed_residues "A137 A139" --batch_size 3 --number_of_batches 5
 
 lig_all = 90, 92
-
-
-Pymol print selected residuesw
-iterate "name of selection" and name CA, print (resi, resn)
 
 
 python run.py --model_type "ligand_mpnn" --pdb_path "./inputs/design_1.pdb" --out_folder "./outputs/mes_active" --redesigned_residues "A13 A27 A31 A75 A76 A77 A80 A81 A86 A143 A144 A202 A267 A268 A269 A270 A272 A273 " --batch_size 1 --number_of_batches 1 

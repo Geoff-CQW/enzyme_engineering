@@ -1,0 +1,1 @@
+cd struc1 ; /home/ikalvet/miniconda3/envs/diffusion/bin/python PATH/TO/rf_diffusion_all_atom/run_inference.py --config-dir=../ --config-name=config.yaml inference.input_pdb=struc1.pdb inference.output_prefix='./out/struc1_dif' > output.log ; cd ..
