@@ -1,0 +1,7 @@
+{
+	"struc3.pdb": {"rfaa": {"fixed": "789", "temp": "very hot", "model": "something", "diffuser": 200}, "ligand_mpnn": {"temp": 0.1}},
+	"struc1.pdb": {"rfaa": {"fixed": "123", "temp": "not too hot", "model": "something", "diffuser": 150}, "ligand_mpnn": {"temp": 0.1}},
+	"struc2.pdb": {"rfaa": {"fixed": "456", "temp": "hot", "model": "something", "diffuser": 100}, "ligand_mpnn": {"temp": 0.1}}
+	
+
+}
